@@ -1,0 +1,8 @@
+.history {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+  }
+  table, th, td {
+    border: 1px solid black;
+  }

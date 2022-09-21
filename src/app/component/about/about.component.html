@@ -1,22 +1,26 @@
-<table *ngIf="listOfCurrencies.length > 0">
-    <tr>
-        <th>From</th>
-        <th>To</th>
-        <th>NumOfConvert</th>
-        <th>Total</th>
-    </tr>
-<div>
-    <tr *ngFor="let item of listOfCurrencies">
-        <td *ngIf="item.from.value">{{item.from.value}}</td> 
-        <td *ngIf="item.to.value">{{item.to.value}}</td>   
-        <td *ngIf="item.numOfConvert">{{item.numOfConvert}}</td>   
-        <td *ngIf="item.from.value && item.to.value">{{item.to.value / item.from.value * item.numOfConvert | number: '1.2-2' }}</td>   
-    </tr>
-</div>
-    <!-- <tr>
+<div >
+    <table class="history">
+        <!-- *ngIf="listOfCurrencies.length > 0" -->
+        <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>NumOfConvert</th>
+            <th>Total</th>
+        </tr>
+        <div>
+            <tr *ngFor="let item of listOfCurrencies">
+                <td *ngIf="item.from.value">{{item.from.value}}</td>
+                <td *ngIf="item.to.value">{{item.to.value}}</td>
+                <td *ngIf="item.numOfConvert">{{item.numOfConvert}}</td>
+                <td *ngIf="item.from.value && item.to.value">{{item.to.value / item.from.value * item.numOfConvert |
+                    number: '1.2-2' }}</td>
+            </tr>
+        </div>
+        <!-- <tr>
         <td *ngFor="let item of listOfCurrencies">{{item.to.value}}</td>   
     </tr>
     <tr>
         <td *ngFor="let item of listOfCurrencies">{{item.numOfConvert}}</td>   
     </tr> -->
-</table>
+    </table>
+</div>
