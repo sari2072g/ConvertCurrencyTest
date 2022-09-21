@@ -1,0 +1,24 @@
+.currencyConverter {
+    font-size: large;
+    color: white;
+    margin-right: 20px;
+    text-decoration: none !important;
+    align-self:center;
+    margin-left: 10px;
+    
+
+}
+.menuHome {
+    background-color: rgb(28, 110, 231);
+    margin-top: -10px;
+    height: 40px !important;
+    display: flex;
+
+}
+.about {
+    font-size: large;
+    color: white;
+    margin-right: 20px;
+    text-decoration: none !important;
+    align-self:center
+}

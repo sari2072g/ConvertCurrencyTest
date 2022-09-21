@@ -1,0 +1,19 @@
+.currency_Converter {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 70px;
+    font-weight: bold;
+}
+
+.form {
+    text-align: center;
+    margin-top: 3%;
+}
+.display_Result {
+    text-align: center;
+    margin-top: 2%;
+    color: rgb(28, 110, 231);
+    font-weight: bold;
+    font-size: 20px;
+
+}
