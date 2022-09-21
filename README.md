@@ -1,4 +1,10 @@
 # Currency
+הוראות שימוש:
+הרץ את הפרויקט ואז הכנס בקישור למעלה ל- Currency Converter
+אחרי שמלאת שם נתונים אתה תוכל לראות  את כל היסטוריית החיפושים לך בקישור של ABOUT 
+בהצלחה!
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
