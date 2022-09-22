@@ -10,42 +10,42 @@ import { HttpService } from 'src/app/Service/http.service';
   styleUrls: ['./currency-converter.component.css']
 })
 export class CurrencyConverterComponent implements OnInit {
-  public listOfCurrencies: any; 
+  public listOfCurrencies: any;
   public currencyConverterFormGroup: FormGroup = this.fb.group({
-    From: [null , Validators.required],
+    From: [null, Validators.required],
     To: [null, Validators.required],
-    NumOfConvert: [null, 
-    [Validators.required,
-    Validators.pattern(/[0-9]/)]
-  ]
- });
+    NumOfConvert: [null,
+      [Validators.required,
+      Validators.pattern(/[0-9]/)]
+    ]
+  });
 
   constructor(private fb: FormBuilder,
     private currenciesService: CurrenciesService
-    ) { }
+  ) { }
 
   ngOnInit(): void {
-    if(sessionStorage.getItem('historyOfConverter') == null)
-        sessionStorage.clear();
+    if (sessionStorage.getItem('historyOfConverter') == null)
+      sessionStorage.clear();
     this.currenciesService.getAllCurrencies().subscribe(
-      x=> {
+      x => {
         this.listOfCurrencies = x['rates'];
-        this.listOfCurrencies = Object.keys(x['rates']).map(key => ({type: key, value: x['rates'][key]}));
+        this.listOfCurrencies = Object.keys(x['rates']).map(key => ({ type: key, value: x['rates'][key] }));
       }
-    )   
+    )
   }
   changeTo() {
-     let addToHistory = new HistoryModel();
-     addToHistory.from = this.currencyConverterFormGroup.controls['From'].value;
-     addToHistory.numOfConvert = this.currencyConverterFormGroup.controls['NumOfConvert'].value;
-     addToHistory.to = this.currencyConverterFormGroup.controls['To'].value;
-    let isThisObjectApper =  this.currenciesService.historyOfConverter.
-      find(x=> x.from == addToHistory.from && x.numOfConvert == addToHistory.numOfConvert
+    let addToHistory = new HistoryModel();
+    addToHistory.from = this.currencyConverterFormGroup.controls['From'].value;
+    addToHistory.numOfConvert = this.currencyConverterFormGroup.controls['NumOfConvert'].value;
+    addToHistory.to = this.currencyConverterFormGroup.controls['To'].value;
+    let isThisObjectApper = this.currenciesService.historyOfConverter.
+      find(x => x.from == addToHistory.from && x.numOfConvert == addToHistory.numOfConvert
         && x.to == addToHistory.to)
-     if(addToHistory.from && addToHistory.numOfConvert && addToHistory.to && isThisObjectApper == null) {
-        this.currenciesService.historyOfConverter.push(addToHistory);
-       // sessionStorage.setItem('historyOfConverter', JSON.stringify(this.currenciesService.historyOfConverter));
-     }
+    if (addToHistory.from && addToHistory.numOfConvert && addToHistory.to && isThisObjectApper == null) {
+      this.currenciesService.historyOfConverter.push(addToHistory);
+      // sessionStorage.setItem('historyOfConverter', JSON.stringify(this.currenciesService.historyOfConverter));
+    }
   }
 
 }

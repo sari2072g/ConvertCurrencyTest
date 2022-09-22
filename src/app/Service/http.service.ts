@@ -9,10 +9,10 @@ import { HistoryModel } from '../Models/HistoryModel';
 export class HttpService {
 
   private baseURL: string = 'http://api.exchangeratesapi.io/v1/latest?access_key=050beeaad0ad5cda72460c6758d5a11e&format=1';
-  constructor( public httpClient: HttpClient) { }
+  constructor(public httpClient: HttpClient) { }
 
   getAllCurrencies(): Observable<any> {
     return this.httpClient.get<any>(this.baseURL);
   }
- 
+
 }

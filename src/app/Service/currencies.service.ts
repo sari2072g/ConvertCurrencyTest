@@ -10,8 +10,8 @@ export class CurrenciesService {
 
   constructor(private httpService: HttpService) { }
 
-  getAllCurrencies() { 
-    return this.httpService.getAllCurrencies(); 
+  getAllCurrencies() {
+    return this.httpService.getAllCurrencies();
   }
 
 }

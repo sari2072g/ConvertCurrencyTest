@@ -2,27 +2,29 @@
     <div class="currency_Converter">
         Currency Converter
     </div>
-    <div   class="form">
-    <form [formGroup] ="currencyConverterFormGroup">
-        <input (change)="changeTo()" formControlName="NumOfConvert" type="number" >
-        <label>    From: </label>
-        <select (change)="changeTo()" formControlName="From">
-            <option *ngFor = "let item of listOfCurrencies" [ngValue] = "item">{{ item.type }}</option>
-        </select>
+    <div class="form">
+        <form [formGroup]="currencyConverterFormGroup">
+            <input (change)="changeTo()" formControlName="NumOfConvert" type="number">
+            <label> From: </label>
+            <select (change)="changeTo()" formControlName="From">
+                <option *ngFor="let item of listOfCurrencies" [ngValue]="item">{{ item.type }}</option>
+            </select>
 
-        <label>    To: </label>
-        <select (change)="changeTo()" formControlName="To">
-            <option *ngFor = "let item1 of listOfCurrencies" [ngValue] = "item1">{{ item1.type }}</option>
-        </select>
-    </form>
+            <label> To: </label>
+            <select (change)="changeTo()" formControlName="To">
+                <option *ngFor="let item1 of listOfCurrencies" [ngValue]="item1">{{ item1.type }}</option>
+            </select>
+        </form>
     </div>
 </div>
 
 <div class="display_Result" *ngIf="currencyConverterFormGroup.valid">
     <div>
-    {{ currencyConverterFormGroup.controls['NumOfConvert'].value |number: '1.2-2'}}  
-    {{ currencyConverterFormGroup.controls['From'].value.type }} = 
-    {{ (currencyConverterFormGroup.controls['To'].value.value / currencyConverterFormGroup.controls['From'].value.value)  * currencyConverterFormGroup.controls['NumOfConvert'].value |number: '1.2-2'   }}   
-    {{ currencyConverterFormGroup.controls['To'].value.type }} 
+        {{ currencyConverterFormGroup.controls['NumOfConvert'].value |number: '1.2-2'}}
+        {{ currencyConverterFormGroup.controls['From'].value.type }} =
+        {{ (currencyConverterFormGroup.controls['To'].value.value /
+        currencyConverterFormGroup.controls['From'].value.value) *
+        currencyConverterFormGroup.controls['NumOfConvert'].value |number: '1.2-2' }}
+        {{ currencyConverterFormGroup.controls['To'].value.type }}
     </div>
 </div>

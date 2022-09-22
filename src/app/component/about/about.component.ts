@@ -9,11 +9,11 @@ import { CurrenciesService } from 'src/app/Service/currencies.service';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-public listOfCurrencies: any;
+  public listOfCurrencies: any;
   constructor(private currenciesService: CurrenciesService) { }
 
   ngOnInit(): void {
-     this.listOfCurrencies = this.currenciesService.historyOfConverter;
-     //this.listOfCurrencies =JSON.parse(this.currenciesService.getSession('historyOfConverter'));
+    this.listOfCurrencies = this.currenciesService.historyOfConverter;
+    //this.listOfCurrencies =JSON.parse(this.currenciesService.getSession('historyOfConverter'));
   }
 }
