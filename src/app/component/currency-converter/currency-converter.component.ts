@@ -44,7 +44,7 @@ export class CurrencyConverterComponent implements OnInit {
         && x.to == addToHistory.to)
      if(addToHistory.from && addToHistory.numOfConvert && addToHistory.to && isThisObjectApper == null) {
         this.currenciesService.historyOfConverter.push(addToHistory);
-        sessionStorage.setItem('historyOfConverter', JSON.stringify(this.currenciesService.historyOfConverter));
+       // sessionStorage.setItem('historyOfConverter', JSON.stringify(this.currenciesService.historyOfConverter));
      }
   }
 
