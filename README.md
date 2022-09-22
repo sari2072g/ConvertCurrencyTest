@@ -7,6 +7,12 @@
 שלחתי לכם מייל ולא החזירו לי חזרה אז יצטרכו להחליף פה קישור
 תודה רבה וסליחה!
 
+הוראות בסיסיות:
+הורד את הפרויקט מתוך הקישור הנ"ל
+הרץ את הפקודה MPM I
+ואז הרץ NG S
+בהצלחה!
+
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
